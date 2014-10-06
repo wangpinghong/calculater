@@ -1,5 +1,6 @@
 package com.example.hw1_2_and24520;
 
+import android.R.integer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +13,10 @@ import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
-private int a,b,c;
-private String ans="";
+private int c,num1,num2,x=2;
+private String a="",b="",ans="";
 int splitter;
-private Button bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btPlus,btMin,btC,btA,btans;
+private Button bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btPlus,btMin,btC,btA,btans,clear,bt0;
 private EditText editText;
 private Boolean ab=true;
 
@@ -23,31 +24,51 @@ private Boolean ab=true;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        clear=(Button) findViewById(R.id.button5);
+        bt0=(Button) findViewById(R.id.button21);
         bt1=(Button) findViewById(R.id.button17);
         bt2=(Button) findViewById(R.id.button18);
         bt3=(Button) findViewById(R.id.button19);
         bt4=(Button) findViewById(R.id.button13);
         bt5=(Button) findViewById(R.id.button14);
         bt6=(Button) findViewById(R.id.button15);
-        bt7=(Button) findViewById(R.id.button19);
+        bt7=(Button) findViewById(R.id.button9);
         bt8=(Button) findViewById(R.id.button10);
         bt9=(Button) findViewById(R.id.button11);
         btPlus=(Button) findViewById(R.id.button16);
         btMin=(Button) findViewById(R.id.button12);
         btC=(Button) findViewById(R.id.button7);
         btA=(Button) findViewById(R.id.button8);
-        btA=(Button) findViewById(R.id.button11);
         btans=(Button)findViewById(R.id.button20);
         editText=(EditText) findViewById(R.id.editText1);
-        
+        bt0.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
+				ans+="0";
+				if(ab){
+					a+="0";
+				}else{
+					b+="0";
+				}
+				editText.setText(ans);
+			}
+		});
         bt1.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="1";
 				if(ab){
-					a=1;
+					a+="1";
 				}else{
-					b=1;
+					b+="1";
 				}
 				editText.setText(ans);
 			}
@@ -55,11 +76,15 @@ private Boolean ab=true;
         bt2.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="2";
 				if(ab){
-					a=2;
+					a+="2";
 				}else{
-					b=2;
+					b+="2";
 				}
 				editText.setText(ans);
 			}
@@ -67,11 +92,15 @@ private Boolean ab=true;
         bt3.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="3";
 				if(ab){
-					a=3;
+					a+="3";
 				}else{
-					b=3;
+					b+="3";
 				}
 				editText.setText(ans);
 			}
@@ -79,11 +108,15 @@ private Boolean ab=true;
         bt4.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="4";
 				if(ab){
-					a=4;
+					a+="4";
 				}else{
-					b=4;
+					b+="4";
 				}
 				editText.setText(ans);
 			}
@@ -91,11 +124,15 @@ private Boolean ab=true;
         bt5.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="5";
 				if(ab){
-					a=5;
+					a+="5";
 				}else{
-					b=5;
+					b+="5";
 				}
 				editText.setText(ans);
 			}
@@ -103,11 +140,15 @@ private Boolean ab=true;
         bt6.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="6";
 				if(ab){
-					a=6;
+					a+="6";
 				}else{
-					b=6;
+					b+="6";
 				}
 				editText.setText(ans);
 			}
@@ -115,11 +156,15 @@ private Boolean ab=true;
         bt7.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="7";
 				if(ab){
-					a=7;
+					a+="7";
 				}else{
-					b=7;
+					b+="7";
 				}
 				editText.setText(ans);
 			}
@@ -127,11 +172,15 @@ private Boolean ab=true;
         bt8.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="8";
 				if(ab){
-					a=8;
+					a+="8";
 				}else{
-					b=8;
+					b+="8";
 				}
 				editText.setText(ans);
 			}
@@ -139,11 +188,15 @@ private Boolean ab=true;
         bt9.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				if(x==1){
+					reset();
+					x=2;
+				}
 				ans+="9";
 				if(ab){
-					a=9;
+					a+="9";
 				}else{
-					b=9;
+					b+="9";
 				}
 				editText.setText(ans);
 			}
@@ -171,7 +224,7 @@ private Boolean ab=true;
 			public void onClick(View v) {
 				ans+="/";
 				ab=false;
-				splitter=3;
+				splitter=4;
 				editText.setText(ans);
 			}
 		});
@@ -180,29 +233,37 @@ private Boolean ab=true;
 			public void onClick(View v) {
 				ans+="*";
 				ab=false;
-				splitter=4;
+				splitter=3;
 				editText.setText(ans);
 			}
 		});
         btans.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				if(ab=false){
-				switch(splitter)
-				{
-					case 1:
-						c=a+b;
-					case 2:
-						c=a-b;
-					case 3:
-						c=a*b;
-					case 4:
-						c=a/b;
+				if(ab==false){
+					if(splitter==1){
+						num1=Integer.valueOf(a).intValue();
+						num2=Integer.valueOf(b).intValue();
+						c=num1+num2;
+					}else if(splitter==2){
+						c=(Integer.valueOf(a).intValue()-Integer.valueOf(b).intValue());
+					}else if(splitter==3){
+						
+						c=Integer.valueOf(a).intValue()*Integer.valueOf(b).intValue();
+					}else if(splitter==4){
+						c=Integer.valueOf(a).intValue()/Integer.valueOf(b).intValue();
+					}
 				}
-				ans=Integer.toString(c);
+				editText.setText(String.valueOf(c));
+				x=1;
+				a="";
+				b="";
 				ab=true;
-				}
-				editText.setText(ans);
+			}
+		});
+        clear.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				reset();
 			}
 		});
     }
@@ -214,6 +275,13 @@ private Boolean ab=true;
         return true;
     }
 
+    public void reset(){
+    	a="";
+    	b="";
+    	ans="";
+    	ab=true;
+    	editText.setText("");
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
